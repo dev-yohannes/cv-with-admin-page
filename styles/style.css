@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-body {
+.input-body {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -57,4 +57,23 @@ form button {
   display: flex;
   justify-content: center;
   cursor: pointer;
+}
+
+.admin-body {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+table {
+  width: 80%;
+}
+table th {
+  padding: 10px;
+  text-align: center;
+  background-color: lightgray;
+}
+table td {
+  padding: 3px;
 }/*# sourceMappingURL=style.css.map */

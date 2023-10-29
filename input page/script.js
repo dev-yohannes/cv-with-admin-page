@@ -6,6 +6,9 @@ const phoneNumberInput = document.querySelector("#po-number-input");
 const emailInput = document.querySelector("#email-input");
 const websiteLinks = document.querySelector("#website-link-input");
 const submitButton = document.querySelector("#submit");
+const successErrorMessage = document.querySelector("#success-error-text");
+
+successErrorMessage.style.display = "none";
 
 submitButton.addEventListener("click", (e) => {
   e.preventDefault();
@@ -19,11 +22,45 @@ submitButton.addEventListener("click", (e) => {
     emailInput.value === "" ||
     websiteLinks.value === ""
   ) {
-    alert("Please fill all the fields");
+    // alert("Please fill all the fields");
+    successErrorMessage.style.display = "block";
+    successErrorMessage.textContent = "Error! check again";
+    successErrorMessage.style.backgroundColor = "red";
+    successErrorMessage.style.color = "white";
+
+    setInterval(() => {
+      successErrorMessage.style.display = "none";
+    }, 2000);
   } else {
+    successErrorMessage.style.display = "block";
+    successErrorMessage.textContent = "Submitted";
+    successErrorMessage.style.backgroundColor = "lightgreen";
+
     localStorage.setItem("userFullName", fullNameInput.value);
-    localStorage.setItem("proTitle", proTitleInput.value);
-    alert("good");
-    console.log(localStorage.getItem("userFullName"));
+    const userFullName = localStorage.getItem("userFullName");
+    localStorage.setItem("userProfessionalTitle", proTitleInput.value);
+    const userProfessionalTitle = localStorage.getItem("userProfessionalTitle");
+    localStorage.setItem("userCountry", countryInput.value);
+    const userCountry = localStorage.getItem("userCountry");
+    localStorage.setItem("userCity", cityInput.value);
+    const userCity = localStorage.getItem("userCity");
+    localStorage.setItem("userPhoneNumber", phoneNumberInput.value);
+    const userPhoneNumber = localStorage.getItem("userPhoneNumber");
+    localStorage.setItem("userEmail", emailInput.value);
+    const userEmail = localStorage.getItem("userEmail");
+    localStorage.setItem("userWebsite", websiteLinks.value);
+    const userWebsite = localStorage.getItem("userWebsite");
+
+    fullNameInput.value = "";
+    proTitleInput.value = "";
+    countryInput.value = "";
+    cityInput.value = "";
+    phoneNumberInput.value = "";
+    emailInput.value = "";
+    websiteLinks.value = "";
+
+    setInterval(() => {
+      successErrorMessage.style.display = "none";
+    }, 2000);
   }
 });

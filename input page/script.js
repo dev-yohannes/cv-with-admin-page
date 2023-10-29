@@ -30,7 +30,7 @@ submitButton.addEventListener("click", (e) => {
 
     setInterval(() => {
       successErrorMessage.style.display = "none";
-    }, 2000);
+    }, 1000);
   } else {
     successErrorMessage.style.display = "block";
     successErrorMessage.textContent = "Submitted";

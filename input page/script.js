@@ -22,7 +22,6 @@ submitButton.addEventListener("click", (e) => {
     emailInput.value === "" ||
     websiteLinks.value === ""
   ) {
-    // alert("Please fill all the fields");
     successErrorMessage.style.display = "block";
     successErrorMessage.textContent = "Error! check again";
     successErrorMessage.style.backgroundColor = "red";

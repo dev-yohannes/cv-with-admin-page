@@ -1,3 +1,5 @@
+// import table from "../admin page/admin.js";
+
 const fullNameInput = document.querySelector("#full-name-input");
 const proTitleInput = document.querySelector("#pro-title-input");
 const countryInput = document.querySelector("#country-input");
@@ -61,5 +63,18 @@ submitButton.addEventListener("click", (e) => {
     setInterval(() => {
       successErrorMessage.style.display = "none";
     }, 2000);
+
+    const newTd = document.createElement("td");
+    newTd.innerHTML = `
+    <tr>
+        <td>${userFullName}</td>
+        <td>${userProfessionalTitle}</td>
+        <td>${userCountry}/ ${userCity}}</td>
+        <td>${userPhoneNumber}</td>
+        <td>${userEmail}</td>
+        <td>${userWebsite}</td>
+      </tr>
+    `;
+    table.appendChild = newTd;
   }
 });

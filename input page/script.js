@@ -1,4 +1,5 @@
 // import table from "../admin page/admin.js";
+import { table } from "../admin page/admin.js";
 
 const fullNameInput = document.querySelector("#full-name-input");
 const proTitleInput = document.querySelector("#pro-title-input");
@@ -11,6 +12,12 @@ const submitButton = document.querySelector("#submit");
 const successErrorMessage = document.querySelector("#success-error-text");
 
 successErrorMessage.style.display = "none";
+
+// import { fname } from "../admin page/admin.js";
+// console.log(fname);
+
+// import { table } from "../admin page/admin.js";
+// console.log(table);
 
 submitButton.addEventListener("click", (e) => {
   e.preventDefault();
@@ -64,17 +71,15 @@ submitButton.addEventListener("click", (e) => {
       successErrorMessage.style.display = "none";
     }, 2000);
 
-    const newTd = document.createElement("td");
-    newTd.innerHTML = `
-    <tr>
+    const newTr = document.createElement("tr");
+    newTr.textContent = `
         <td>${userFullName}</td>
         <td>${userProfessionalTitle}</td>
         <td>${userCountry}/ ${userCity}}</td>
         <td>${userPhoneNumber}</td>
         <td>${userEmail}</td>
         <td>${userWebsite}</td>
-      </tr>
     `;
-    table.appendChild = newTd;
+    table.appendChild = newTr;
   }
 });

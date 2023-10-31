@@ -1,6 +1,14 @@
 const table = document.querySelector("table");
 
-export const addingTableContnet = () => {
+export const addingTableContnet = (
+  userFullName,
+  userProfessionalTitle,
+  userCountry,
+  userCity,
+  userPhoneNumber,
+  userEmail,
+  userWebsite
+) => {
   const newTr = document.createElement("tr");
   newTr.textContent = `
         <td>${userFullName}</td>

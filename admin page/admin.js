@@ -1,8 +1,6 @@
-// import { usersDataArrayLocalStorage } from "../input page/script.js";
-// console.log(usersDataArrayLocalStorage);
+export const table = document.querySelector("table");
+// export default { table };
 
-// import { usersDataArrayJson } from "../input page/script.js";
-// const usersDataArray = JSON.parse(usersDataArrayJson);
-// console.log(usersDataArray);
-const saving = localStorage.getItem("storedUserDataArray");
-console.log(saving);
+export const fname = "jo";
+
+console.log(fname);

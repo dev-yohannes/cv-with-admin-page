@@ -1,6 +1,3 @@
-// import table from "../admin page/admin.js";
-import { table } from "../admin page/admin.js";
-
 const fullNameInput = document.querySelector("#full-name-input");
 const proTitleInput = document.querySelector("#pro-title-input");
 const countryInput = document.querySelector("#country-input");
@@ -13,11 +10,11 @@ const successErrorMessage = document.querySelector("#success-error-text");
 
 successErrorMessage.style.display = "none";
 
-// import { fname } from "../admin page/admin.js";
-// console.log(fname);
+const usersDataArray = [];
 
-// import { table } from "../admin page/admin.js";
-// console.log(table);
+// const usersDataArray = [];
+// const usersDataArrayJson = JSON.stringify(usersDataArray);
+// export { usersDataArrayJson };
 
 submitButton.addEventListener("click", (e) => {
   e.preventDefault();
@@ -59,6 +56,24 @@ submitButton.addEventListener("click", (e) => {
     localStorage.setItem("userWebsite", websiteLinks.value);
     const userWebsite = localStorage.getItem("userWebsite");
 
+    const usersDataObject = {};
+
+    usersDataObject.userFullName = userFullName;
+    usersDataObject.userProfessionalTitle = userProfessionalTitle;
+    usersDataObject.userCountry = userCountry;
+    usersDataObject.userCity = userCity;
+    usersDataObject.userPhoneNumber = userPhoneNumber;
+    usersDataObject.userEmail = userEmail;
+    usersDataObject.userWebsite = userWebsite;
+
+    usersDataArray.push(usersDataObject);
+    console.log(usersDataArray);
+
+    const usersDataArrayLocalStorage = localStorage.setItem(
+      "storedUserDataArray",
+      usersDataArray
+    );
+
     fullNameInput.value = "";
     proTitleInput.value = "";
     countryInput.value = "";
@@ -70,16 +85,5 @@ submitButton.addEventListener("click", (e) => {
     setInterval(() => {
       successErrorMessage.style.display = "none";
     }, 2000);
-
-    const newTr = document.createElement("tr");
-    newTr.textContent = `
-        <td>${userFullName}</td>
-        <td>${userProfessionalTitle}</td>
-        <td>${userCountry}/ ${userCity}}</td>
-        <td>${userPhoneNumber}</td>
-        <td>${userEmail}</td>
-        <td>${userWebsite}</td>
-    `;
-    table.appendChild = newTr;
   }
 });

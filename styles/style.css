@@ -96,13 +96,11 @@ table td {
 @media screen and (max-width: 1400px) {
   table {
     width: 65%;
-    background-color: yellow;
   }
 }
 @media screen and (max-width: 850px) {
   table {
     margin: 0px 10px;
     width: 100%;
-    background-color: red;
   }
 }/*# sourceMappingURL=style.css.map */

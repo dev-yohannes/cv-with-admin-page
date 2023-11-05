@@ -60,9 +60,22 @@ form button {
   cursor: pointer;
 }
 
+a {
+  text-decoration: none;
+  margin-top: 50px;
+  background-color: gray;
+  color: white;
+  padding: 5px 20px;
+  border-radius: 3px;
+}
+a:hover {
+  background-color: rgb(77, 77, 77);
+}
+
 .admin-body {
-  height: 30vh;
+  height: 50vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
